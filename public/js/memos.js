@@ -31,7 +31,7 @@ function photos() {
     })
     .catch();
 
-
+  $(window).scroll(function () {
     $(".photo-img:visible").each(function () {
       var img = $(this);
      
@@ -40,8 +40,7 @@ function photos() {
     });
     $(".bg").remove();
     $(".text").remove();
-
-
+  });
 }
 
 $(document).ready(function () {
