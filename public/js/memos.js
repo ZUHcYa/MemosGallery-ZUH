@@ -34,9 +34,9 @@ function photos() {
   $(window).scroll(function () {
     $(".photo-img:visible").each(function () {
       var img = $(this);
-      if (img.offset().top < $(window).scrollTop() + $(window).height()) {
+     
         img.attr("src", img.attr("data-lazyload"));
-      }
+      
     });
     $(".bg").remove();
     $(".text").remove();
