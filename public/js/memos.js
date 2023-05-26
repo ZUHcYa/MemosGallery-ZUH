@@ -1,14 +1,8 @@
-console.log(
-  "\n %c MemosGallery v1.0.1 %c https://i.yct.ee/ \n",
-  "color: #fadfa3; background: #030307; padding:5px 0;",
-  "background: #fadfa3; padding:5px 0;"
-);
 photos();
 function photos() {
   fetch("https://hlastro.duckdns.org/api/memo?openId=f178aae4-3ed5-4821-9eb1-37b548ef47a3")
     .then((res) => res.json())
     .then((data) => {
-      // 记得修改memos地址
       let html = "",
         imgs = [];
       data.data.forEach((item) => {
