@@ -21,7 +21,6 @@ body::-webkit-scrollbar {
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 9px;
-  border: 3px solid var(--vp-c-brand-lighter);
   box-shadow: 0 10px 50px #5f2f1182;
   filter: sepia(30%) saturate(30%) hue-rotate(5deg);
   transition: transform 0.5s;
