@@ -4,7 +4,7 @@ $(document).ready(function () {
       $("#container").append(
         '<img data-lazyload="' +
           value +
-          '" src="public/load.svg" class="lazyload blur" alt="">'
+          '" src="public/load.gif" class="lazyload blur" alt="">'
       );
       $(".loadImg").remove();
     });
