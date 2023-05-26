@@ -75,13 +75,6 @@ body::-webkit-scrollbar {
 }
 
 body {
-  background: linear-gradient(
-    -45deg,
-    var(--vp-c-brand),
-    var(--vp-c-brand-light),
-    var(--vp-c-brand-lighter),
-    var(--vp-c-brand-next)
-  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
