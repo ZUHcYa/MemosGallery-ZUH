@@ -5,7 +5,7 @@ console.log(
 );
 photos();
 function photos() {
-  fetch("http://hlastro.duckdns.org/api/memo?openId=f178aae4-3ed5-4821-9eb1-37b548ef47a3")
+  fetch("https://hlastro.duckdns.org/api/memo?openId=f178aae4-3ed5-4821-9eb1-37b548ef47a3")
     .then((res) => res.json())
     .then((data) => {
       // 记得修改memos地址
@@ -24,7 +24,7 @@ function photos() {
           title = tat.split(" ")[1];
         } else title = tat;
 
-        html += `<div class="gallery-photo"><a href="${img}" data-fancybox="gallery" class="fancybox" data-thumb="${img}"><img class="photo-img" loading='lazy' decoding="async" data-lazyload="${img}" src="public/load.svg"></a>`;
+        html += `<div class="gallery-photo"><a href="${img}" data-fancybox="gallery" class="fancybox" data-thumb="${img}"><img class="photo-img" loading='lazy' decoding="async" data-lazyload="${img}" src="public/load.gif"></a>`;
         title ? (html += `<span class="photo-title">${title}</span>`) : "";
         time ? (html += `<span class="photo-time">${time}</span>`) : "";
         html += `</div>`;
