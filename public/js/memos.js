@@ -1,6 +1,6 @@
 photos();
 function photos() {
-  fetch("https://hlastro.duckdns.org/api/memo?openId=f178aae4-3ed5-4821-9eb1-37b548ef47a3")
+  fetch("https://hlastro.duckdns.org/api/memo?creatorId=1")
     .then((res) => res.json())
     .then((data) => {
       let html = "",
