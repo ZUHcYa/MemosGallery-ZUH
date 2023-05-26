@@ -4,9 +4,8 @@ console.log(
   "background: #fadfa3; padding:5px 0;"
 );
 photos();
-//查询所有用户api “https://memos.smitten.top/api/memo/all?tag=相册”
 function photos() {
-  fetch("https://memos.smitten.top/api/memo?creatorId=1&tag=相册")
+  fetch("http://hlastro.duckdns.org/api/memo?openId=f178aae4-3ed5-4821-9eb1-37b548ef47a3")
     .then((res) => res.json())
     .then((data) => {
       // 记得修改memos地址
