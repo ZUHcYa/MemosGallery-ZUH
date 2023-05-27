@@ -1,44 +1,37 @@
+const domain = "https://hlastro.duckdns.org";
+const tag = "picture";
+const url = domain+"/api/memo?creatorId=1&tag="+tag;
+
 photos();
+
 function photos() {
-  fetch("https://hlastro.duckdns.org/api/memo?creatorId=1&tag=picture")
+  fetch(url)
     .then((res) => res.json())
     .then((data) => {
       let html = "",
         imgs = [];
       data.data.forEach((item) => {
-        imgs = imgs.concat(item.content.match(/\!\[.*?\]\(.*?\)/g));
-      });
-      imgs.forEach((item) => {
-        let img = item.replace(/!\[.*?\]\((.*?)\)/g, "$1"),
-          time,
-          title,
-          tat = item.replace(/!\[(.*?)\]\(.*?\)/g, "$1");
-        if (tat.indexOf(" ") != -1) {
-          time = tat.split(" ")[0];
-          title = tat.split(" ")[1];
-        } else title = tat;
+        
+        item.resourceList.forEach((resource) => {
+          imgs = imgs.concat(domain+"/o/r/"+resource.id+"/"+resource.publicId+"/"+resource.filename);
 
-        html += `<div class="gallery-photo"><a href="${img}" data-fancybox="gallery" class="fancybox" data-thumb="${img}"><img class="photo-img" loading='lazy' decoding="async" data-lazyload="${img}" src="public/load.gif"></a>`;
-        title ? (html += `<span class="photo-title">${title}</span>`) : "";
-        time ? (html += `<span class="photo-time">${time}</span>`) : "";
+        });
+        
+        
+      });
+      imgs.forEach((img) => {
+
+
+        html += `<div><img src="`+img+`" loading="lazy" alt="..." />`;
         html += `</div>`;
       });
 
-      document.querySelector(".gallery-photos.page").innerHTML = html;
+      document.querySelector(".grid").innerHTML = html;
       window.Lately && Lately.init({ target: ".photo-time" });
     })
     .catch();
 
-  $(window).scroll(function () {
-    $(".photo-img:visible").each(function () {
-      var img = $(this);
-      if (img.offset().top < $(window).scrollTop() + $(window).height()) {
-        img.attr("src", img.attr("data-lazyload"));
-      }
-    });
-    $(".bg").remove();
-    $(".text").remove();
-  });
+
 }
 
 $(document).ready(function () {
