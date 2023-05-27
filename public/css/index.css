@@ -6,6 +6,7 @@ body a img {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 600px));
+  justify-content:center;
 } 
 
 #container {
