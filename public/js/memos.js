@@ -22,11 +22,11 @@ function photos() {
       imgs.forEach((img) => {
 
 
-        html += `<div class="gallery-photo"><img src="`+img+`" loading="lazy" alt="..." />`;
+        html += `<div><img src="`+img+`" loading="lazy" alt="..." />`;
         html += `</div>`;
       });
 
-      document.querySelector(".gallery-photos.page").innerHTML = html;
+      document.querySelector("grid").innerHTML = html;
       window.Lately && Lately.init({ target: ".photo-time" });
     })
     .catch();
