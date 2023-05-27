@@ -26,7 +26,7 @@ function photos() {
         html += `</div>`;
       });
 
-      document.querySelector("grid").innerHTML = html;
+      document.querySelector(".grid").innerHTML = html;
       window.Lately && Lately.init({ target: ".photo-time" });
     })
     .catch();
