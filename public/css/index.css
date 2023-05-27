@@ -5,8 +5,8 @@ body a img {
 
 .grid {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-}
+  grid-template-columns: repeat(auto-fit, minmax(500px, 600px));
+} 
 
 #container {
   column-count: 3;
