@@ -22,7 +22,7 @@ function photos() {
       imgs.forEach((img) => {
 
 
-        html += `<div class="gallery-photo"><a href="${img}" data-fancybox="gallery" class="fancybox" data-thumb="${img}"><img class="photo-img" loading='lazy' decoding="async" data-lazyload="${img}" src="public/load.gif"></a>`;
+        html += `<div class="gallery-photo"><img src="`+img+`" loading="lazy" alt="..." />`;
         html += `</div>`;
       });
 
@@ -31,16 +31,7 @@ function photos() {
     })
     .catch();
 
-  $(window).scroll(function () {
-    $(".photo-img:visible").each(function () {
-      var img = $(this);
-     
-        img.attr("src", img.attr("data-lazyload"));
-      
-    });
-    $(".bg").remove();
-    $(".text").remove();
-  });
+
 }
 
 $(document).ready(function () {
